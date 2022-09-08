@@ -1,0 +1,150 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="robots" content="noodp,noydir,index,follow" />
+    <meta http-equiv="Content-Security-Policy" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta http-equiv="content-language" content="vi" />
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>@ViewData["Title"]</title>
+    <meta name="description" content="@ViewData["Description"]" />
+    <meta name="keywords" content="@ViewData["Keywords"]" />
+    <meta name="author" content="H2AITS" />
+    <link rel="shortcut icon" id="link_favicon_shortcut_shop" type="image/x-icon" href="/favicon.ico" "  />
+    <link rel="icon" id="link_favicon_shop" type="image/x-icon" href="/favicon.ico" />
+
+    <!-- Facebook, Zalo, Telegram Meta Tags -->
+    <meta property="og:image" content="@ViewData["ImagePreview"]" />
+    <meta property="og:image:alt" content="@ViewData["Title"]" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="vi" />
+    <meta property="og:url" content="www.vuabepfoods.com" />
+    <meta property="og:site_name" content="" />
+    <meta property="og:title" content="@ViewData["Title"]" />
+    <meta property="og:description" content="@ViewData["Description"]" />
+
+    <!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content="@ViewData["ImagePreview"]" />
+    <meta name="twitter:title" content="@ViewData["Title"]" />
+    <meta name="twitter:description" content="@ViewData["Description"]" />
+
+    <!-- Browser Tab Icon -->
+    <link href="/assets/portal/css/bootstrap.min.css" rel="stylesheet">                    <!-- Bootstrap -->
+    <link rel="stylesheet" href="/assets/portal/css/font-awesome.min.css">                 <!-- Font-Awesome Icons -->
+    <link rel="stylesheet" href="/assets/portal/css/icomoon.min.css">                      <!-- iconmoon Icons -->
+    <link rel="stylesheet" href="/assets/portal/css/swiper.min.css">                       <!-- Carousel slider -->
+    <link rel="stylesheet" href="/assets/portal/css/style.css">                            <!-- Template CSS -->
+    <link rel="stylesheet" href="/assets/portal/css/animate.css">						   <!-- Wow Animation CSS -->
+
+    <link rel="stylesheet" href="/assets/portal/css/google-fonts.css">                     <!-- Google font (Poppins) font face -->
+    <link href="../../../../../assets/portal/css?family=Poppins:300,400,500,600,700" rel="stylesheet">		<!-- Google font (Poppins)  -->
+
+    @await RenderSectionAsync("Styles", required: false)
+</head>
+<body>
+
+    <!-- WRAPPER -->
+    <div class="wrapper preloader" id="site-home">
+
+        @RenderBody()
+
+        <!-- FOOTER -->
+        <footer class="site-footer section-blue">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <h1> Download Smart Now</h1>
+                        <!-- DOWNLOAD ICONS -->
+                        <section class="site-download-icons">
+                            <div class="align-center">
+
+                                <!-- BUTTON 1 -->
+                                <a href="#" class="app-download-icons wow fadeInDown" data-wow-duration="1s">
+                                    <!-- FIGURE -->
+                                    <figure><i class="fa fa-mobile"></i></figure>
+                                    <!-- h6 heading -->
+                                    <h6>Available on the</h6>
+                                    <!-- h5 -->
+                                    <h5>iOS App Store</h5>
+                                </a>
+
+                                <!-- BUTTON 2 -->
+                                <a href="#" class="app-download-icons wow fadeInDown" data-wow-duration="2s">
+                                    <!-- FIGURE -->
+                                    <figure><i class="fa fa-android"></i></figure>
+                                    <!-- h6 heading -->
+                                    <h6>Available on the</h6>
+                                    <!-- h5 -->
+                                    <h5>Google Store</h5>
+                                </a>
+
+                                <!-- BUTTON 3 -->
+                                <a href="#" class="app-download-icons wow fadeInDown" data-wow-duration="3s">
+                                    <!-- FIGURE -->
+                                    <figure><i class="fa fa-windows adjust"></i></figure>
+                                    <!-- h6 heading -->
+                                    <h6>Available on the</h6>
+                                    <!-- h5 -->
+                                    <h5>Windows Store</h5>
+                                </a>
+
+                            </div>
+                        </section>
+
+                        <!-- END LOGO -->
+                        <!-- SOCIAL ICONS -->
+                        <div class="site-social-icons">
+                            <a href="#"><i class="fa fa-facebook"></i></a>
+                            <a href="#"><i class="fa fa-twitter"></i></a>
+                            <a href="#"><i class="fa fa-google-plus"></i></a>
+                            <a href="#"><i class="fa fa-pinterest"></i></a>
+                            <a href="#"><i class="fa fa-youtube"></i></a>
+                        </div>
+                        <!-- END SOCIAL ICONS -->
+                        <!-- COPYRIGHT -->
+                        <div class="site-copyright">
+                            <p>© Copyright 2016 Start. Designed by <a href="https://graphicriver.net/user/kalanidhithemes" target="_blank">Kalanidhi Themes</a></p>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+    <!-- END WRAPPER -->
+    <!-------------------------------------------------------------------------- SCRIPTS -->
+    <script src="/assets/portal/js/jquery-1.12.4.min.js"></script>                         <!-- JQuery -->
+    <script src="/assets/portal/js/loadingoverlay.min.js"></script>                        <!-- Preloader -->
+    <script src="/assets/portal/js/swiper.jquery.min.js"></script>                         <!-- Carousel slider -->
+    <script src="/assets/portal/js/jquery.mCustomScrollbar.concat.min.js"></script>        <!-- Custom scroll bar -->
+    <script src="/assets/portal/js/modernizr-custom.min.js"></script>                      <!-- Modernizr -->
+    <script src="/assets/portal/js/imagesloaded.pkgd.min.js"></script>                     <!-- Header Slider -->
+    <script src="/assets/portal/js/hammer.min.js"></script>                                <!-- Header Slider -->
+    <script src="/assets/portal/js/sequence.min.js"></script>                              <!-- Header Slider -->
+    <script src="/assets/portal/js/tweetie.min.js"></script>                               <!-- Twitter Feed -->
+    <script src="/assets/portal/js/jquery.countimator.min.js"></script>                    <!-- Counter -->
+    <script src="/assets/portal/js/bootstrap.min.js"></script>                             <!-- Bootstrap -->
+    <script src="/assets/portal/js/jquery.sticky.min.js"></script>                         <!-- Sticky Header -->
+    <script src="/assets/portal/js/jquery.scrollUp.min.js"></script>                       <!-- scroll top -->
+    <script src="/assets/portal/js/style.js"></script>                                     <!-- Template Changeable Plugin Options -->
+    <script src="/assets/portal/js/wow.min.js"></script>								   <!--Wow animation js -->
+    <!--Wave animation on mouse move js -->
+    <script src="/assets/portal/js/TweenMax.min.js"></script>							<!--Wave animation on mouse move js -->
+    <script src="/assets/portal/js/jquery-parallax.js"></script>						<!--Wave animation on mouse move js -->
+
+    <script>
+        $(document).mousemove(function (e) {
+            $('.background').parallax(-30, e);
+            $('.cloud1').parallax(10, e);
+            $('.cloud2').parallax(20, e);
+            $('.cloud3').parallax(30, e);
+        });
+    </script>
+
+
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
