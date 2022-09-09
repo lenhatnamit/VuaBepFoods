@@ -70,7 +70,13 @@
         }
         public M_JResult MapData(dynamic response, dynamic data, dynamic data2nd = default(dynamic))
         {
-            return new M_JResult(response, data, data2nd);
+            return new M_JResult()
+            {
+                result = response,
+                error = response.error,
+                data = data,
+                data2nd = data2nd,
+            };
         }
         public int result { get; set; }
         public error error { get; set; }

@@ -287,7 +287,7 @@ jQuery(document).ready(function ($) {
             scroll_speed = 1000;
 
             // click function
-            $("header .site-nav a[href^='#']").on("click", function (e) {
+            $(".smooth_scroll a[href^='#']").on("click", function (e) {
 
                 // Stop default behaviour
                 e.preventDefault();
