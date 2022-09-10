@@ -72,7 +72,7 @@
         {
             return new M_JResult()
             {
-                result = response,
+                result = response.result,
                 error = response.error,
                 data = data,
                 data2nd = data2nd,
