@@ -1501,14 +1501,14 @@ box-shadow: 10px 10px 34px -11px rgba(0,0,0,0.75);
 }
 
 .static-banner-image {
-	background:url(../images/header-slide-1.png) no-repeat right top;
-	width:470px;
-	height:633px;
-	text-align:right;
-	position:relative;
-	right:0;
-	left:140px;
-	top:0;
+	background: url(/img/image-top.png) no-repeat right top;
+	width: 470px;
+	height: 633px;
+	text-align: right;
+	position: relative;
+	right: 0;
+	left: 110px;
+	top: 0;
 }
 
 

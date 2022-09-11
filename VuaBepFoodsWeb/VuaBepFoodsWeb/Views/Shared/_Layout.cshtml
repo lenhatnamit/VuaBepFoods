@@ -11,7 +11,7 @@
     <meta name="description" content="@ViewData["Description"]" />
     <meta name="keywords" content="@ViewData["Keywords"]" />
     <meta name="author" content="H2AITS" />
-    <link rel="shortcut icon" id="link_favicon_shortcut_shop" type="image/x-icon" href="/favicon.ico" "     />
+    <link rel="shortcut icon" id="link_favicon_shortcut_shop" type="image/x-icon" href="/favicon.ico"/>
     <link rel="icon" id="link_favicon_shop" type="image/x-icon" href="/favicon.ico" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -41,6 +41,14 @@
     <link rel="stylesheet" href="/assets/portal/css/swiper.min.css">
     <link rel="stylesheet" href="/assets/portal/css/style.css" asp-append-version="true">
     <link rel="stylesheet" href="/assets/portal/css/animate.css">
+    <link href="~/lib/glightbox/css/glightbox.min.css" rel="stylesheet" />
+    <style>
+        .slide_product img{
+            width: 230px;
+            height: 290px;
+            object-fit: cover;
+        }
+    </style>
 
     @await RenderSectionAsync("Styles", required: false)
 </head>
@@ -135,6 +143,7 @@
     <!--Wave animation on mouse move js -->
     <script src="/assets/portal/js/TweenMax.min.js"></script>							<!--Wave animation on mouse move js -->
     <script src="/assets/portal/js/jquery-parallax.js"></script>						<!--Wave animation on mouse move js -->
+    <script src="~/lib/glightbox/js/glightbox.min.js"></script>
 
     <script>
         $(document).mousemove(function (e) {
@@ -143,6 +152,43 @@
             $('.cloud2').parallax(20, e);
             $('.cloud3').parallax(30, e);
         });
+        InitLightBox();
+        function InitLightBox() {
+            const lightbox = GLightbox({
+                selector: '*[data-glightbox]',
+                touchNavigation: true,
+                loop: false,
+                zoomable: false,
+                autoplayVideos: true,
+                moreLength: 0,
+                slideExtraAttributes: {
+                    poster: ''
+                },
+                plyr: {
+                    css: '',
+                    js: '',
+                    config: {
+                        ratio: '16:9',
+                        fullscreen: {
+                            enabled: false,
+                            iosNative: false
+                        },
+                        youtube: {
+                            noCookie: true,
+                            rel: 0,
+                            showinfo: 0,
+                            iv_load_policy: 3
+                        },
+                        vimeo: {
+                            byline: false,
+                            portrait: false,
+                            title: false,
+                            transparent: false
+                        }
+                    }
+                },
+            });
+        }
     </script>
 
 
