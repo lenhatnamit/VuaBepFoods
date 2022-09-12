@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.HttpOverrides;
 using Microsoft.Extensions.Configuration;
 using VuaBepFoodsWeb.Middlewares;
+using VuaBepFoodsWeb.Models;
 using VuaBepFoodsWeb.ViewModels;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -37,6 +38,7 @@ builder.Services.AddSession(options =>
 builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 
 //builder.Services.Configure<VM_ViewDataSEO>(builder.Configuration.GetSection("ApiSettings"));
+builder.Services.Configure<Config_MetaSEO>(builder.Configuration.GetSection("MetaSEO"));
 builder.Services.AddControllersWithViews();
 builder.Services.AddRazorPages().AddRazorRuntimeCompilation();
 

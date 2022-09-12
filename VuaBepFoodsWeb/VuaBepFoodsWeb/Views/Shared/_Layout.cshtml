@@ -11,7 +11,7 @@
     <meta name="description" content="@ViewData["Description"]" />
     <meta name="keywords" content="@ViewData["Keywords"]" />
     <meta name="author" content="H2AITS" />
-    <link rel="shortcut icon" id="link_favicon_shortcut_shop" type="image/x-icon" href="/favicon.ico"/>
+    <link rel="shortcut icon" id="link_favicon_shortcut_shop" type="image/x-icon" href="/favicon.ico" />
     <link rel="icon" id="link_favicon_shop" type="image/x-icon" href="/favicon.ico" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -43,7 +43,7 @@
     <link rel="stylesheet" href="/assets/portal/css/animate.css">
     <link href="~/lib/glightbox/css/glightbox.min.css" rel="stylesheet" />
     <style>
-        .slide_product img{
+        .slide_product img {
             width: 230px;
             height: 290px;
             object-fit: cover;
@@ -60,43 +60,41 @@
         @RenderBody()
 
         <!-- FOOTER -->
-        <footer class="site-footer section-blue">
+        <footer class="site-footer section-blue" style="background: url(/img/slide/7.jpg); background-repeat: no-repeat; background-size: cover;">
             <div class="container">
                 <div class="row">
                     <div class="col-xs-12">
-                        <h1> Download Smart Now</h1>
+                        <h1 style="margin-bottom:10px;">Vua Bếp Foods</h1>
+                        <h3>Nước Sốt Ướp Thịt Nướng</h3>
                         <!-- DOWNLOAD ICONS -->
                         <section class="site-download-icons">
                             <div class="align-center">
 
                                 <!-- BUTTON 1 -->
-                                <a href="#" class="app-download-icons wow fadeInDown" data-wow-duration="1s">
+                                <a href="tel:0938034589" class="app-download-icons wow fadeInDown" data-wow-duration="1s">
                                     <!-- FIGURE -->
                                     <figure><i class="fa fa-mobile"></i></figure>
                                     <!-- h6 heading -->
-                                    <h6>Available on the</h6>
-                                    <!-- h5 -->
-                                    <h5>iOS App Store</h5>
+                                    <h5>Liên hệ đặt hàng</h5>
+                                    <h6>0938 034 589</h6>
                                 </a>
 
                                 <!-- BUTTON 2 -->
-                                <a href="#" class="app-download-icons wow fadeInDown" data-wow-duration="2s">
+                                <a href="#guide_using" class="app-download-icons wow fadeInDown" data-wow-duration="2s">
                                     <!-- FIGURE -->
-                                    <figure><i class="fa fa-android"></i></figure>
+                                    <figure><i class="fa fa-glide-g"></i></figure>
                                     <!-- h6 heading -->
-                                    <h6>Available on the</h6>
-                                    <!-- h5 -->
-                                    <h5>Google Store</h5>
+                                    <h5>Hướng dẫn sử dụng</h5>
+                                    <h6>Tăng thêm độ ngon</h6>
                                 </a>
 
                                 <!-- BUTTON 3 -->
-                                <a href="#" class="app-download-icons wow fadeInDown" data-wow-duration="3s">
+                                <a href="#feature_product" class="app-download-icons wow fadeInDown" data-wow-duration="3s">
                                     <!-- FIGURE -->
-                                    <figure><i class="fa fa-windows adjust"></i></figure>
+                                    <figure><i class="fa fa-info adjust"></i></figure>
                                     <!-- h6 heading -->
-                                    <h6>Available on the</h6>
-                                    <!-- h5 -->
-                                    <h5>Windows Store</h5>
+                                    <h5>Thông tin sản phẩm</h5>
+                                    <h6>Hiểu hơn về Vua Bếp Foods</h6>
                                 </a>
 
                             </div>
@@ -105,16 +103,17 @@
                         <!-- END LOGO -->
                         <!-- SOCIAL ICONS -->
                         <div class="site-social-icons">
-                            <a href="#"><i class="fa fa-facebook"></i></a>
-                            <a href="#"><i class="fa fa-twitter"></i></a>
-                            <a href="#"><i class="fa fa-google-plus"></i></a>
-                            <a href="#"><i class="fa fa-pinterest"></i></a>
-                            <a href="#"><i class="fa fa-youtube"></i></a>
+                            <a href="https://www.facebook.com/VuaBepFoods.Official" target="_blank"><i class="fa fa-facebook"></i></a>
+                            <a href="https://www.youtube.com/channel/UCTfmZlc4Ec5cxjWCrHrXIQA" target="_blank"><i class="fa fa-youtube-play"></i></a>
+                            @*<a href="#"><i class="fa fa-twitter"></i></a>
+                                <a href="#"><i class="fa fa-google-plus"></i></a>
+                                <a href="#"><i class="fa fa-pinterest"></i></a>
+                                <a href="#"><i class="fa fa-youtube"></i></a>*@
                         </div>
                         <!-- END SOCIAL ICONS -->
                         <!-- COPYRIGHT -->
-                        <div class="site-copyright">
-                            <p>© Copyright 2016 Start. Designed by <a href="https://graphicriver.net/user/kalanidhithemes" target="_blank">Kalanidhi Themes</a></p>
+                        <div class="site-copyright" style="color:white;">
+                            <p> © 2020. All Rights Reserved by Vua Bep Foods</p>
                         </div>
 
                     </div>
@@ -123,6 +122,62 @@
         </footer>
 
     </div>
+    @*<style>
+        .btn.btn-circle {
+            padding: 0;
+            border-radius: 100% !important;
+            width: 2.2rem;
+            height: 2.2rem;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+            line-height: 1;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+        }
+
+        .btn-circle.ripple::after, .btn-circle.ripple::before {
+            content: "";
+            display: block;
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            border-radius: 50%;
+            background: #fff;
+            opacity: .8;
+            -webkit-animation: ripple-1 2s infinite ease-in-out;
+            animation: ripple-1 2s infinite ease-in-out;
+            z-index: -1;
+        }
+
+        .btn-circle.ripple::before {
+            content: "";
+            display: block;
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            border-radius: 50%;
+            background: #fff;
+            opacity: .8;
+            -webkit-animation: ripple-1 2s infinite ease-in-out;
+            animation: ripple-1 2s infinite ease-in-out;
+            z-index: -1;
+        }
+
+        .btn-circle.ripple::after {
+            opacity: .6;
+            -webkit-animation: ripple-2 2s infinite ease-in-out;
+            animation: ripple-2 2s infinite ease-in-out;
+            -webkit-animation-delay: .5s;
+            animation-delay: .5s;
+        }
+    </style>
+    <a href="#" class="btn btn-circle btn-primary btn-play ripple me-5"><i class="icon-phone"></i></a>*@
     <!-- END WRAPPER -->
     <!-------------------------------------------------------------------------- SCRIPTS -->
     <script src="/assets/portal/js/jquery-1.12.4.min.js"></script>                         <!-- JQuery -->
