@@ -1,18 +1,64 @@
-html {
-  font-size: 14px;
+.slide_product img {
+    width: 230px;
+    height: 290px;
+    object-fit: cover;
 }
 
-@media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
+.plyr__tooltip {
+    height: 30px;
+    font-size: 16px !important;
+    width: 70px;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
 }
 
-html {
-  position: relative;
-  min-height: 100%;
+.wrap {
+    position: fixed;
+    margin: 0 auto;
+    left: 0.875rem;
+    bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 50;
 }
 
-body {
-  margin-bottom: 60px;
+.btn_call_animate {
+    background: linear-gradient(135deg, var(--theme-default) 0%, var(--theme-first) 68%, var(--theme-second) 100%);
+    cursor: pointer;
+    border: 2px solid white;
+    color: white !important;
+    height: 50px;
+    width: 50px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 100%;
+    text-transform: uppercase;
+    font-family: "Muli-LightItalic", Helvetica;
+    font-size: 20px;
+    line-height: 30px;
+    animation: ripple 1.5s linear infinite;
+    transition: all 0.7s ease;
+}
+
+    .btn_call_animate:hover {
+        transform: scale(1.1);
+    }
+
+    .btn_call_animate:focus {
+        outline: none;
+    }
+
+@keyframes ripple {
+    0% {
+        box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.3), 0 0 0 1px rgba(255, 255, 255, 0.3), 0 0 0 3px rgba(255, 255, 255, 0.3), 0 0 0 5px rgba(255, 255, 255, 0.3);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.3), 0 0 0 4px rgba(255, 255, 255, 0.3), 0 0 0 20px rgba(255, 255, 255, 0), 0 0 0 30px rgba(255, 255, 255, 0);
+    }
 }

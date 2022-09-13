@@ -41,14 +41,13 @@
     <link rel="stylesheet" href="/assets/portal/css/swiper.min.css">
     <link rel="stylesheet" href="/assets/portal/css/style.css" asp-append-version="true">
     <link rel="stylesheet" href="/assets/portal/css/animate.css">
-    <link href="~/lib/glightbox/css/glightbox.min.css" rel="stylesheet" />
-    <style>
-        .slide_product img {
-            width: 230px;
-            height: 290px;
-            object-fit: cover;
-        }
-    </style>
+    <link rel="stylesheet" href="/assets/portal/css/google-fonts.css">
+    <link rel="stylesheet" href="/lib/glightbox/css/glightbox.min.css" />
+    <link href="~/lib/ladda/ladda.min.css" rel="stylesheet" />
+    <link href="~/lib/izi-toast-mater/css/iziToast.min.css" rel="stylesheet" />
+    <link href="~/lib/sweetalert2/sweetalert2.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.plyr.io/3.7.2/plyr.css" />
+    <link href="~/css/site.css" rel="stylesheet" asp-append-version="true" />
 
     @await RenderSectionAsync("Styles", required: false)
 </head>
@@ -64,11 +63,11 @@
             <div class="container">
                 <div class="row">
                     <div class="col-xs-12">
-                        <h1 style="margin-bottom:10px;">Vua Bếp Foods</h1>
-                        <h3>Nước Sốt Ướp Thịt Nướng</h3>
+                        <h1 style="margin-bottom:20px;">Vua Bếp Foods</h1>
+                        <h3 style="margin-bottom:30px;">Nước Sốt Ướp Thịt Nướng</h3>
                         <!-- DOWNLOAD ICONS -->
                         <section class="site-download-icons">
-                            <div class="align-center">
+                            <div class="align-center smooth_scroll">
 
                                 <!-- BUTTON 1 -->
                                 <a href="tel:0938034589" class="app-download-icons wow fadeInDown" data-wow-duration="1s">
@@ -122,62 +121,20 @@
         </footer>
 
     </div>
-    @*<style>
-        .btn.btn-circle {
-            padding: 0;
-            border-radius: 100% !important;
-            width: 2.2rem;
-            height: 2.2rem;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1rem;
-            line-height: 1;
-            -webkit-backface-visibility: hidden;
-            backface-visibility: hidden;
-        }
 
-        .btn-circle.ripple::after, .btn-circle.ripple::before {
-            content: "";
-            display: block;
-            position: absolute;
-            top: 0;
-            right: 0;
-            bottom: 0;
-            left: 0;
-            border-radius: 50%;
-            background: #fff;
-            opacity: .8;
-            -webkit-animation: ripple-1 2s infinite ease-in-out;
-            animation: ripple-1 2s infinite ease-in-out;
-            z-index: -1;
-        }
+    <div class="wrap hotline_call" style="display:none;">
+        <a href="tel:0938034589" class="btn_call_animate">
+            <i class="fa fa-phone"></i>
+        </a>
+    </div>
 
-        .btn-circle.ripple::before {
-            content: "";
-            display: block;
-            position: absolute;
-            top: 0;
-            right: 0;
-            bottom: 0;
-            left: 0;
-            border-radius: 50%;
-            background: #fff;
-            opacity: .8;
-            -webkit-animation: ripple-1 2s infinite ease-in-out;
-            animation: ripple-1 2s infinite ease-in-out;
-            z-index: -1;
-        }
+    <!-- Audio notify -->
+    <audio src="/sounds/sound1.ogg" id="audio_success"></audio>
+    <audio src="/sounds/sound6.ogg" id="audio_warning"></audio>
+    <audio src="/sounds/sound5.ogg" id="audio_error"></audio>
+    <audio src="/sounds/sound7.ogg" id="audio_info"></audio>
+    <audio src="/sounds/sound4.ogg" id="audio_question"></audio>
 
-        .btn-circle.ripple::after {
-            opacity: .6;
-            -webkit-animation: ripple-2 2s infinite ease-in-out;
-            animation: ripple-2 2s infinite ease-in-out;
-            -webkit-animation-delay: .5s;
-            animation-delay: .5s;
-        }
-    </style>
-    <a href="#" class="btn btn-circle btn-primary btn-play ripple me-5"><i class="icon-phone"></i></a>*@
     <!-- END WRAPPER -->
     <!-------------------------------------------------------------------------- SCRIPTS -->
     <script src="/assets/portal/js/jquery-1.12.4.min.js"></script>                         <!-- JQuery -->
@@ -199,15 +156,39 @@
     <script src="/assets/portal/js/TweenMax.min.js"></script>							<!--Wave animation on mouse move js -->
     <script src="/assets/portal/js/jquery-parallax.js"></script>						<!--Wave animation on mouse move js -->
     <script src="~/lib/glightbox/js/glightbox.min.js"></script>
+    <script src="https://cdn.plyr.io/3.7.2/plyr.polyfilled.js"></script>
+    <script src="~/lib/ladda/ladda.min.js"></script>
+    <script src="~/lib/ladda/spin.min.js"></script>
+    <script src="~/lib/izi-toast-mater/js/iziToast.min.js"></script>
+    <script src="~/lib/sweetalert2/sweetalert2.min.js"></script>
+    <script src="~/lib/bootstrap-maxlength/bootstrap-maxlength.min.js"></script>
+
+    <script src="~/js/utility_lib.js"></script>
 
     <script>
         $(document).mousemove(function (e) {
+
             $('.background').parallax(-30, e);
             $('.cloud1').parallax(10, e);
             $('.cloud2').parallax(20, e);
             $('.cloud3').parallax(30, e);
+
         });
-        InitLightBox();
+
+        $(document).ready(function () {
+
+            setTimeout(function () {
+                $('.hotline_call').fadeIn(500);
+            }, 2000);
+
+            InitLightBox();
+
+            var players = Plyr.setup('.player', {
+                loadSprite: true,
+            });
+
+        });
+
         function InitLightBox() {
             const lightbox = GLightbox({
                 selector: '*[data-glightbox]',
@@ -245,6 +226,8 @@
             });
         }
     </script>
+
+    <partial name="_ValidationScriptsPartial" />
 
 
     @await RenderSectionAsync("Scripts", required: false)

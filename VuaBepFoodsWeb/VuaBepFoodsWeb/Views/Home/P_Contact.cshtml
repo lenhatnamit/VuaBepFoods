@@ -1,0 +1,81 @@
+﻿@model EM_Contact
+
+<section id="quick-support" class="site-quick-support section-white">
+    <div class="container">
+        <div class="contact-box blue-purple-gredient">
+            <div class="col-xs-12">
+                <div class="box">
+
+                    <!-- INFO -->
+                    <div class="col-xs-12 col-sm-12 col-md-5 col-lg-5">
+                        <div class="site-info">
+                            <h5>Liên hệ đặt hàng</h5>
+                            <p>
+                                Đặt hàng ngay hôm nay để nhận được nhiều ưu đãi.
+                            </p>
+
+                            <!-- BOX -->
+                            <a href="tel:0938034589" class="site-box-row">
+                                <h6><i class="fa fa-phone"></i> Điện thoại </h6>
+                                <p>0938 034 589</p>
+                            </a>
+
+                            <!-- BOX -->
+                            <a href="mailto:vuabepfoods.official@gmail.com" class="site-box-row last">
+                                <!-- ICON -->
+                                <h6><i class="fa fa-envelope"></i> Email </h6>
+                                <!-- Mail -->
+                                <p>vuabepfoods.official@gmail.com</p>
+                            </a>
+
+                            <!-- BOX -->
+                            <a target="_blank" href="https://www.google.com/maps/dir/?api=1&destination=10.97327%2C106.86721" class="site-box-row">
+                                <!-- ICON -->
+                                <h6><i class="fa fa-map-marker"></i> Địa chỉ</h6>
+                                <!-- ADDRESS -->
+                                <address>38-46 Đ. Nguyễn Phúc Chu, Trảng Dài, Thành phố Biên Hòa, Đồng Nai</address>
+                            </a>
+
+                        </div>
+                    </div>
+
+                    <!-- CONTACT FORM -->
+                    <div class="col-xs-12 col-sm-12 col-md-7 col-lg-7">
+                        <div class="site-info form">
+                            <h5> Chúng tôi sẽ liên hệ ngay sau khi bạn đặt hàng </h5>
+                            <form method="post" class="site-contact-form" id="form_data_contact">
+                                <label>
+                                    <input class="app-btn value-clear" type="text" asp-for="name" placeholder="Tên" required />
+                                    <span asp-validation-for="name" class="invalid-feedback"></span>
+                                </label>
+
+                                <label>
+                                    <input class="app-btn value-clear" type="tel" asp-for="telephoneNumber" placeholder="Điện thoại" required>
+                                    <span asp-validation-for="telephoneNumber" class="invalid-feedback"></span>
+                                </label>
+
+                                <label>
+                                    <input class="app-btn value-clear" type="email" asp-for="email" placeholder="Email">
+                                    <span asp-validation-for="email" class="invalid-feedback"></span>
+                                </label>
+
+                                <label>
+                                    <input class="app-btn value-clear" type="number" asp-for="quantity" placeholder="Số lượng" min="1" max="@Int32.MaxValue" required>
+                                </label>
+
+                                <label class="last">
+                                    <textarea class="app-btn value-clear" asp-for="message" placeholder="Lời nhắn"></textarea>
+                                </label>
+
+                                <label class="move">
+                                    <button id="btn_submit_form_contact" class="app-btn" type="submit" dir="ltr" data-style="zoom-in">Gửi <i class="fa fa-spin fa-spinner"></i></button>
+                                </label>
+                            </form>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

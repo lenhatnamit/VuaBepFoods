@@ -2,6 +2,45 @@
     ViewData["Title"] = "Vua Bếp Foods - Nước sốt ướp thịt nướng đậm đà";
 }
 
+@section Scripts{
+    <script>
+        $(document).ready(function () {
+
+            //Init bootstrap max length
+            $('form [maxlength]').maxlength({
+                alwaysShow: !0,
+            });
+
+            $('#form_data_contact').on('submit', function (e) {
+                e.preventDefault();
+                e.stopImmediatePropagation();
+                let $formElm = $(this);
+                let isvalidate = CheckValidationUnobtrusive($formElm);
+                if (!isvalidate) { ShowToastNoti('warning', '', _resultActionResource.PleaseWrite); return false; }
+                let formData = new FormData($formElm[0]);
+                laddaSubmitForm = Ladda.create(document.querySelector('#btn_submit_form_contact'));
+                laddaSubmitForm.start();
+                $.ajax({
+                    url: '/Home/SubmitContact',
+                    type: 'POST',
+                    data: formData,
+                    contentType: false,
+                    processData: false,
+                    success: function (response) {
+                        laddaSubmitForm.stop();
+                        if (!CheckResponseIsSuccess(response)) return false;
+                        swal.fire('Đã gửi!', '', 'success');
+                    }, error: function (err) {
+                        laddaSubmitForm.stop();
+                        CheckResponseIsSuccess({ result: -1, error: { code: err.status } });
+                    }
+                });
+            });
+
+        });
+    </script>
+}
+
 <!-- NAVIGATION AND SLIDER HOLDER -->
 <section class="site-holder" role="banner">
 
@@ -569,9 +608,10 @@
             </div>
 
             <div class="col-xs-12 col-sm-12 col-md-6 col-md-pull-6">
-                <iframe id="ytplayer" type="text/html" style="width:100%;height:360px;"
-                        src="https://www.youtube.com/embed/gZkt6t924yk"
-                        frameborder="0"></iframe>
+                <div class="player" data-plyr-provider="youtube" data-plyr-embed-id="gZkt6t924yk"></div>
+                @*<iframe id="ytplayer" type="text/html" style="width:100%;height:360px;"
+                    src="https://www.youtube.com/embed/gZkt6t924yk"
+                    frameborder="0"></iframe>*@
             </div>
         </div>
     </div>
@@ -1902,83 +1942,7 @@
     </div>
 </section>
 
-<!-- QUICK SUPPORT -->
-<section id="quick-support" class="site-quick-support section-white">
-    <div class="container">
-        <div class="contact-box blue-purple-gredient">
-            <div class="col-xs-12">
-                <div class="box">
-
-                    <!-- INFO -->
-                    <div class="col-xs-12 col-sm-12 col-md-5 col-lg-5">
-                        <div class="site-info">
-                            <h5>Liên hệ đặt hàng</h5>
-                            <p>
-                                Đặt hàng ngay hôm nay để nhận được nhiều ưu đãi.
-                            </p>
-
-                            <!-- BOX -->
-                            <a href="tel:0938034589" class="site-box-row">
-                                <h6><i class="fa fa-phone"></i> Điện thoại </h6>
-                                <p>0938 034 589</p>
-                            </a>
-
-                            <!-- BOX -->
-                            <a href="mailto:vuabepfoods.official@gmail.com" class="site-box-row last">
-                                <!-- ICON -->
-                                <h6><i class="fa fa-envelope"></i> Email </h6>
-                                <!-- Mail -->
-                                <p>vuabepfoods.official@gmail.com</p>
-                            </a>
-
-                            <!-- BOX -->
-                            <a target="_blank" href="https://www.google.com/maps/dir/?api=1&destination=10.97327%2C106.86721" class="site-box-row">
-                                <!-- ICON -->
-                                <h6><i class="fa fa-map-marker"></i> Địa chỉ</h6>
-                                <!-- ADDRESS -->
-                                <address>38-46 Đ. Nguyễn Phúc Chu, Trảng Dài, Thành phố Biên Hòa, Đồng Nai</address>
-                            </a>
-
-                        </div>
-                    </div>
-
-                    <!-- CONTACT FORM -->
-                    <div class="col-xs-12 col-sm-12 col-md-7 col-lg-7">
-                        <div class="site-info form">
-                            <h5> Chúng tôi sẽ liên hệ ngay sau khi bạn đặt hàng </h5>
-                            <form action="#" method="post" class="site-contact-form" id="myForm">
-                                <label>
-                                    <input class="app-btn value-clear" type="text" name="app_name" placeholder="Tên" required>
-                                </label>
-
-                                <label>
-                                    <input class="app-btn value-clear" type="email" name="app_email" placeholder="Email" required>
-                                </label>
-
-                                <label>
-                                    <input class="app-btn value-clear" type="tel" name="app_phone" placeholder="Điện thoại" required>
-                                </label>
-
-                                <label>
-                                    <input class="app-btn value-clear" type="number" name="quantity" placeholder="Số lượng" required>
-                                </label>
-
-                                <label class="last">
-                                    <textarea class="app-btn value-clear" name="app_message" placeholder="Lời nhắn"></textarea>
-                                </label>
-
-                                <label class="move">
-                                    <button id="form-submit-btn" class="app-btn" type="submit">Gửi <i class="fa fa-spin fa-spinner"></i></button>
-                                </label>
-                            </form>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+<partial name="P_Contact" />
 
 <!-- SUBSCRIBE -->
 <section class="site-subscribe" style="display:none;">

@@ -576,7 +576,7 @@ box-shadow: 0px 0px 22px 6px rgba(24,30,110,0.03);
 
 .site-holder .sticky-header {
   /* Sticky header */
-  z-index: 100000 !important;
+  z-index: 99 !important;
   /*background: #203e51;*/
   position:absolute;
   top:0;
@@ -2808,11 +2808,12 @@ box-shadow: -1px 10px 33px -5px rgba(24,30,110,0.31);
 }
 
 .site-download-icons a {
-  border: none;
-  margin-right: 0.625rem;
-  margin-left: 0.625rem;
-  border-radius: 62.5rem;
-  padding: 1.75rem 3.75rem 1.75rem 5.625rem;
+	border: none;
+	margin-bottom: 0.625rem;
+	margin-right: 0.625rem;
+	margin-left: 0.625rem;
+	border-radius: 62.5rem;
+	padding: 1.75rem 3.75rem 1.75rem 5.625rem;
 }
 
 .site-download-icons a:hover {
@@ -5010,8 +5011,8 @@ y-axis */
 #scrollUp {
   margin: 0;
   padding: 0;
-  bottom: 1.875rem;
-  right: 1.875rem;
+  bottom: 20px;
+  right: 0.875rem;
   height: 3.125rem;
   width: 3.125rem;
   line-height: 3.125rem;

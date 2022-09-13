@@ -38,9 +38,9 @@ jQuery(document).ready(function ($) {
 
             // Pre-loader initialize (Plugin Options)
             $.LoadingOverlay(class_show, {
-                color : "white",        // Background Color. Default white color. You can also used hex color code. Like (#ffffff)
-                fade  : false,          // Animate the overlay div. Options (true, false)
-                image : "/assets/portal/images/loader-purple.gif", // Animate GIF image Path
+                color: "white",        // Background Color. Default white color. You can also used hex color code. Like (#ffffff)
+                fade: false,          // Animate the overlay div. Options (true, false)
+                image: "/assets/portal/images/loader-purple.gif", // Animate GIF image Path
                 zIndex: 1000            // z-index value. Overlay div always stay top of the website content. Value is in integer
             });
 
@@ -64,14 +64,14 @@ jQuery(document).ready(function ($) {
 
             // Changeable Options
             options = {
-                animateCanvas                 : false,  // Whether Sequence.js should automatically control the canvas animation when a step is navigated to.
-                phaseThreshold                : false,  // Whether there should be a delay between the current step animating out and the next step animating in.
-                fadeStepWhenSkipped           : true,   // If a step is skipped before it finishes animating, cause it to fade out over a specific period of time
+                animateCanvas: false,  // Whether Sequence.js should automatically control the canvas animation when a step is navigated to.
+                phaseThreshold: false,  // Whether there should be a delay between the current step animating out and the next step animating in.
+                fadeStepWhenSkipped: true,   // If a step is skipped before it finishes animating, cause it to fade out over a specific period of time
                 reverseWhenNavigatingBackwards: true,   // Whether animations should be reversed when a user navigates backwards by clicking a previous button/swiping/pressing the left key.
-                autoPlay                      : true,   // Automatically navigate
-                swipeNavigation               : true,   // Whether to allow the user to navigate between steps by swiping left and right on touch enabled devices.
-                swipeEvents                   : {       // The public Sequence.js method that should occur when the user swipes in a particular direction.
-                    left : function (sequence) {
+                autoPlay: true,   // Automatically navigate
+                swipeNavigation: true,   // Whether to allow the user to navigate between steps by swiping left and right on touch enabled devices.
+                swipeEvents: {       // The public Sequence.js method that should occur when the user swipes in a particular direction.
+                    left: function (sequence) {
 
                         // When the user swipes left, the Sequence.js event self.prev() is initiated.
                         sequence.prev();
@@ -99,13 +99,13 @@ jQuery(document).ready(function ($) {
             new Swiper("#how-it-works-slider", {
 
                 // Changeable options
-                loop               : true,                   // Set to true to enable continuous loop mode.
-                initialSlide       : 2,                      // Index number of initial slide.
-                pagination         : "#how-it-works-paging", // String with CSS selector or HTML element of the container with pagination
-                nextButton         : "#how-it-works-next",   // String with CSS selector or HTML element of the element that will work like "next" button after click on it
-                prevButton         : "#how-it-works-prev",   // String with CSS selector or HTML element of the element that will work like "prev" button after click on it
+                loop: true,                   // Set to true to enable continuous loop mode.
+                initialSlide: 2,                      // Index number of initial slide.
+                pagination: "#how-it-works-paging", // String with CSS selector or HTML element of the container with pagination
+                nextButton: "#how-it-works-next",   // String with CSS selector or HTML element of the element that will work like "next" button after click on it
+                prevButton: "#how-it-works-prev",   // String with CSS selector or HTML element of the element that will work like "prev" button after click on it
                 paginationClickable: true,                   // If true then clicking on pagination button will cause transition to appropriate slide. Only for bullets pagination type
-                speed              : 1000,                   // Duration of transition between slides (in ms)
+                speed: 1000,                   // Duration of transition between slides (in ms)
 
                 paginationBulletRender: function (index, className) {
                     /* This parameter allows totally customize pagination bullets,
@@ -128,30 +128,30 @@ jQuery(document).ready(function ($) {
             new Swiper("#quick-view-slider", {
 
                 // Changeable options
-                loop               : true,                  // Set to true to enable continuous loop mode.
-                initialSlide       : 1,                     // Index number of initial slide.
-                pagination         : "#quick-view-paging",  // String with CSS selector or HTML element of the container with pagination
-                nextButton         : "#quick-view-next",    // String with CSS selector or HTML element of the element that will work like "next" button after click on it
-                prevButton         : "#quick-view-prev",    // String with CSS selector or HTML element of the element that will work like "prev" button after click on it
+                loop: true,                  // Set to true to enable continuous loop mode.
+                initialSlide: 1,                     // Index number of initial slide.
+                pagination: "#quick-view-paging",  // String with CSS selector or HTML element of the container with pagination
+                nextButton: "#quick-view-next",    // String with CSS selector or HTML element of the element that will work like "next" button after click on it
+                prevButton: "#quick-view-prev",    // String with CSS selector or HTML element of the element that will work like "prev" button after click on it
                 paginationClickable: true,                  // If true then clicking on pagination button will cause transition to appropriate slide. Only for bullets pagination type
-                slidesPerView      : 5,                     // Number of slides per view (slides visible at the same time on slider's container).
-                spaceBetween       : 20,                    // Distance between slides in px.
+                slidesPerView: 5,                     // Number of slides per view (slides visible at the same time on slider's container).
+                spaceBetween: 20,                    // Distance between slides in px.
 
                 // Responsive breakpoints
                 breakpoints: {
                     // when window width is <= 500px
                     "500": {
-                        slidesPerView     : 1,              // Number of slides per view (slides visible at the same time on slider's container).
+                        slidesPerView: 1,              // Number of slides per view (slides visible at the same time on slider's container).
                         spaceBetweenSlides: 0               // Distance between slides in px.
                     },
                     // when window width is <= 767px
                     "767": {
-                        slidesPerView     : 2,              // Number of slides per view (slides visible at the same time on slider's container).
+                        slidesPerView: 2,              // Number of slides per view (slides visible at the same time on slider's container).
                         spaceBetweenSlides: 20              // Distance between slides in px.
                     },
                     // when window width is <= 992px
                     "991": {
-                        slidesPerView     : 3,              // Number of slides per view (slides visible at the same time on slider's container).
+                        slidesPerView: 3,              // Number of slides per view (slides visible at the same time on slider's container).
                         spaceBetweenSlides: 20              // Distance between slides in px.
                     }
                 }
@@ -182,25 +182,25 @@ jQuery(document).ready(function ($) {
             new Swiper("#team-slider", {
 
                 // Changeable options
-                loop               : true,                  // Set to true to enable continuous loop mode.
-                initialSlide       : 1,                     // Index number of initial slide.
-                pagination         : "#team-paging",        // String with CSS selector or HTML element of the container with pagination
-                nextButton         : "#team-next",          // String with CSS selector or HTML element of the element that will work like "next" button after click on it
-                prevButton         : "#team-prev",          // String with CSS selector or HTML element of the element that will work like "prev" button after click on it
+                loop: true,                  // Set to true to enable continuous loop mode.
+                initialSlide: 1,                     // Index number of initial slide.
+                pagination: "#team-paging",        // String with CSS selector or HTML element of the container with pagination
+                nextButton: "#team-next",          // String with CSS selector or HTML element of the element that will work like "next" button after click on it
+                prevButton: "#team-prev",          // String with CSS selector or HTML element of the element that will work like "prev" button after click on it
                 paginationClickable: true,                  // If true then clicking on pagination button will cause transition to appropriate slide. Only for bullets pagination type
-                slidesPerView      : 3,                     // Number of slides per view (slides visible at the same time on slider's container).
-                spaceBetween       : 20,                    // Distance between slides in px.
+                slidesPerView: 3,                     // Number of slides per view (slides visible at the same time on slider's container).
+                spaceBetween: 20,                    // Distance between slides in px.
 
                 // Responsive breakpoints
                 breakpoints: {
                     // when window width is <= 500px
                     "600": {
-                        slidesPerView     : 1,              // Number of slides per view (slides visible at the same time on slider's container).
+                        slidesPerView: 1,              // Number of slides per view (slides visible at the same time on slider's container).
                         spaceBetweenSlides: 0               // Distance between slides in px.
                     },
                     // when window width is <= 767px
                     "991": {
-                        slidesPerView     : 2,              // Number of slides per view (slides visible at the same time on slider's container).
+                        slidesPerView: 2,              // Number of slides per view (slides visible at the same time on slider's container).
                         spaceBetweenSlides: 20              // Distance between slides in px.
                     }
                 }
@@ -218,16 +218,16 @@ jQuery(document).ready(function ($) {
             new Swiper("#testimonial-slider", {
 
                 // Changeable options
-                loop               : true,                  // Set to true to enable continuous loop mode.
-                initialSlide       : 1,                     // Index number of initial slide.
-                pagination         : "#testimonial-paging", // String with CSS selector or HTML element of the container with pagination
-                nextButton         : "#testimonial-next",   // String with CSS selector or HTML element of the element that will work like "next" button after click on it
-                prevButton         : "#testimonial-prev",   // String with CSS selector or HTML element of the element that will work like "prev" button after click on it
+                loop: true,                  // Set to true to enable continuous loop mode.
+                initialSlide: 1,                     // Index number of initial slide.
+                pagination: "#testimonial-paging", // String with CSS selector or HTML element of the container with pagination
+                nextButton: "#testimonial-next",   // String with CSS selector or HTML element of the element that will work like "next" button after click on it
+                prevButton: "#testimonial-prev",   // String with CSS selector or HTML element of the element that will work like "prev" button after click on it
                 paginationClickable: true,                  // If true then clicking on pagination button will cause transition to appropriate slide. Only for bullets pagination type
-                slidesPerView      : 1,                     // Number of slides per view (slides visible at the same time on slider's container).
-                spaceBetween       : 20,                    // Distance between slides in px.
-                speed              : 1000,                  // Duration of transition between slides (in ms)
-                autoplay           : 4000                   // Delay between transitions (in ms). If this parameter is not specified, auto play will be disabled
+                slidesPerView: 1,                     // Number of slides per view (slides visible at the same time on slider's container).
+                spaceBetween: 20,                    // Distance between slides in px.
+                speed: 1000,                  // Duration of transition between slides (in ms)
+                autoplay: 4000                   // Delay between transitions (in ms). If this parameter is not specified, auto play will be disabled
             });
         },
 
@@ -267,13 +267,13 @@ jQuery(document).ready(function ($) {
             // Plugin initialize
             $.scrollUp({
                 scrollDistance: 300,                              // Distance from top/bottom before showing element (px)
-                scrollFrom    : "top",                            // 'top' or 'bottom'
-                scrollSpeed   : 1000,                             // Speed back to top (ms)
-                easingType    : "linear",                         // Scroll to top easing (see http://easings.net/)
-                animation     : "fade",                           // Fade, slide, none
+                scrollFrom: "top",                            // 'top' or 'bottom'
+                scrollSpeed: 1000,                             // Speed back to top (ms)
+                easingType: "linear",                         // Scroll to top easing (see http://easings.net/)
+                animation: "fade",                           // Fade, slide, none
                 animationSpeed: 400,                              // Animation in speed (ms)
-                scrollText    : "<i class='fa fa-angle-up'></i>", // Text for element, can contain HTML (font awesome icon)
-                zIndex        : 10000                             // Z-Index for the overlay
+                scrollText: "<i class='fa fa-angle-up'></i>", // Text for element, can contain HTML (font awesome icon)
+                zIndex: 10000                             // Z-Index for the overlay
             });
         },
 
@@ -327,10 +327,10 @@ jQuery(document).ready(function ($) {
                 // Submit the form using AJAX.
                 $.ajax({
                     type: "POST",               // Post type
-                    url : self.attr("action"),  // Form action url
+                    url: self.attr("action"),  // Form action url
                     data: self.serialize()      // serialize the form data
                 })
-                // Mail success
+                    // Mail success
                     .done(function () {
 
                         // alert on success
@@ -403,7 +403,7 @@ jQuery(document).ready(function ($) {
                         current.icon_change(self);
 
                     })
-                    // active class
+                        // active class
                         .addClass(active);
                 } else {
 
@@ -415,7 +415,7 @@ jQuery(document).ready(function ($) {
                         // Call icon change function
                         current.icon_change(self);
                     })
-                    // remove class
+                        // remove class
                         .removeClass(active);
                 }
 
@@ -444,7 +444,7 @@ jQuery(document).ready(function ($) {
                         current.icon_change($(mobileButton));
 
                     })
-                    // remove class
+                        // remove class
                         .removeClass(active);
 
                 }
@@ -473,7 +473,7 @@ jQuery(document).ready(function ($) {
                         current.icon_change($(mobileButton));
 
                     })
-                    // remove class
+                        // remove class
                         .removeClass(active);
                 }
 
@@ -514,41 +514,45 @@ jQuery(document).ready(function ($) {
          * and add the twitter api key */
         /*-----------------------------------------------------------------------------------*/
         twitter_feed: function () {
+            try {
 
-            /* PLUGIN INITIALIZE */
-            $(".tweet").twittie({
-                dateFormat : "%b %d, %Y",               // date format
-                template   : "" +                       // template HTML structure
-                "<p>{{tweet}}</p>" +
-                "<div class='date'>{{date}}</div>",
-                count      : 3,                         // Number of tweets show
-                loadingText: "Loading!",                // Text show before tweets load
-                apiPath    : "php/twitter/tweet.php"    // Tweet PHP file path used for user information.
-            }, function () {
+                /* PLUGIN INITIALIZE */
+                $(".tweet").twittie({
+                    dateFormat: "%b %d, %Y",               // date format
+                    template: "" +                       // template HTML structure
+                        "<p>{{tweet}}</p>" +
+                        "<div class='date'>{{date}}</div>",
+                    count: 3,                         // Number of tweets show
+                    loadingText: "Loading!",                // Text show before tweets load
+                    apiPath: "php/twitter/tweet.php"    // Tweet PHP file path used for user information.
+                }, function () {
 
-                /* Plugin initialize (Unique ID selector) */
-                new Swiper("#tweet-slider", {
+                    /* Plugin initialize (Unique ID selector) */
+                    new Swiper("#tweet-slider", {
 
-                    // Changeable options
-                    loop               : true,                  // Set to true to enable continuous loop mode.
-                    initialSlide       : 1,                     // Index number of initial slide.
-                    pagination         : "#tweet-paging",       // String with CSS selector or HTML element of the container with pagination
-                    nextButton         : "#tweet-next",         // String with CSS selector or HTML element of the element that will work like "next" button after click on it
-                    prevButton         : "#tweet-prev",         // String with CSS selector or HTML element of the element that will work like "prev" button after click on it
-                    paginationClickable: true,                  // If true then clicking on pagination button will cause transition to appropriate slide. Only for bullets pagination type
-                    slidesPerView      : 1,                     // Number of slides per view (slides visible at the same time on slider's container).
-                    spaceBetween       : 20,                    // Distance between slides in px.
-                    speed              : 1000,                  // Duration of transition between slides (in ms)
-                    autoplay           : 4000                   // Delay between transitions (in ms). If this parameter is not specified, auto play will be disabled
+                        // Changeable options
+                        loop: true,                  // Set to true to enable continuous loop mode.
+                        initialSlide: 1,                     // Index number of initial slide.
+                        pagination: "#tweet-paging",       // String with CSS selector or HTML element of the container with pagination
+                        nextButton: "#tweet-next",         // String with CSS selector or HTML element of the element that will work like "next" button after click on it
+                        prevButton: "#tweet-prev",         // String with CSS selector or HTML element of the element that will work like "prev" button after click on it
+                        paginationClickable: true,                  // If true then clicking on pagination button will cause transition to appropriate slide. Only for bullets pagination type
+                        slidesPerView: 1,                     // Number of slides per view (slides visible at the same time on slider's container).
+                        spaceBetween: 20,                    // Distance between slides in px.
+                        speed: 1000,                  // Duration of transition between slides (in ms)
+                        autoplay: 4000                   // Delay between transitions (in ms). If this parameter is not specified, auto play will be disabled
+                    });
                 });
-            });
+            } catch (e) {
+
+            }
         }
     };
-	
-	/*-----------------------------------------------------------------------------------*/
+
+    /*-----------------------------------------------------------------------------------*/
     /* wow animation */
     /*-----------------------------------------------------------------------------------*/
-	new WOW().init();
+    new WOW().init();
 
 
     /*-----------------------------------------------------------------------------------*/
