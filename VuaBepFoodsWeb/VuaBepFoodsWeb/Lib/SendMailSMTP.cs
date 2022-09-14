@@ -1,35 +1,50 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using Microsoft.Extensions.Options;
 using System.Net.Mail;
-using System.Threading.Tasks;
+using VuaBepFoodsWeb.Models;
 
 namespace VuaBepFoodsWeb.Lib
 {
-    public static class SendMailSMTP
+    public interface ISendMailSMTP
     {
-        public static void SendMail()
+        Task<int> SendMail(string toMail, string subject, string message);
+    }
+    public class SendMailSMTP : ISendMailSMTP
+    {
+        private readonly IOptions<Config_MailSMPTConfig> _configuration;
+
+        public SendMailSMTP(IOptions<Config_MailSMPTConfig> configuration)
         {
-            SmtpClient smtpClient = new SmtpClient("sv48d44.emailserver.vn");
+            _configuration = configuration;
+        }
 
-            smtpClient.EnableSsl = true;
-            smtpClient.UseDefaultCredentials = false;
-            smtpClient.Credentials = new System.Net.NetworkCredential("info@h2aits.com", "h2aitS@123");
-            //smtpClient.Credentials = new System.Net.NetworkCredential("lenhatnamit07@gmail.com", "bzlrxhtcqumqtwef");
-            // smtpClient.UseDefaultCredentials = true; // uncomment if you don't want to use the network credentials
-            smtpClient.DeliveryMethod = SmtpDeliveryMethod.Network;
-            smtpClient.Port = 587;
-            MailMessage mail = new MailMessage();
+        public async Task<int> SendMail(string toMail, string subject, string message)
+        {
+            try
+            {
+                SmtpClient smtpClient = new SmtpClient(_configuration.Value.host);
 
-            //Setting From , To and CC
-            mail.From = new MailAddress("info@h2ait.com", "H2A IT SOLUTION");
-            mail.To.Add(new MailAddress("pronam13@gmail.com"));
-            //mail.CC.Add(new MailAddress("nhanit2012.vn@gmail.com"));
-            mail.IsBodyHtml = true;
-            mail.Subject = "Email Sent";
-            mail.Body = "<h1>Test mail</h1>";
-
-            smtpClient.Send(mail);
+                smtpClient.EnableSsl = true;
+                smtpClient.UseDefaultCredentials = false;
+                smtpClient.Credentials = new System.Net.NetworkCredential(_configuration.Value.fromEmail, _configuration.Value.password);
+                //smtpClient.Credentials = new System.Net.NetworkCredential("lenhatnamit07@gmail.com", "bzlrxhtcqumqtwef");
+                // smtpClient.UseDefaultCredentials = true; // uncomment if you don't want to use the network credentials
+                smtpClient.DeliveryMethod = SmtpDeliveryMethod.Network;
+                smtpClient.Port = 587;
+                MailMessage mail = new MailMessage();
+                //Setting From , To and CC
+                mail.From = new MailAddress(_configuration.Value.fromEmail, _configuration.Value.displayName);
+                mail.To.Add(new MailAddress(toMail ?? _configuration.Value.toEmail));
+                //mail.CC.Add(new MailAddress("nhanit2012.vn@gmail.com"));
+                mail.IsBodyHtml = true;
+                mail.Subject = subject;
+                mail.Body = message;
+                await smtpClient.SendMailAsync(mail);
+            }
+            catch (Exception)
+            {
+                return 0;
+            }
+            return 1;
         }
     }
 }

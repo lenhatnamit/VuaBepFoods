@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.HttpOverrides;
 using Microsoft.Extensions.Configuration;
+using VuaBepFoodsWeb.Lib;
 using VuaBepFoodsWeb.Middlewares;
 using VuaBepFoodsWeb.Models;
 using VuaBepFoodsWeb.ViewModels;
@@ -37,8 +38,10 @@ builder.Services.AddSession(options =>
 //builder.Services.AddAutoMapper(typeof(AutoMapperProfile).Assembly); //Init auto mappper
 builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 
-//builder.Services.Configure<VM_ViewDataSEO>(builder.Configuration.GetSection("ApiSettings"));
+builder.Services.AddSingleton<ISendMailSMTP, SendMailSMTP>(); 
+
 builder.Services.Configure<Config_MetaSEO>(builder.Configuration.GetSection("MetaSEO"));
+builder.Services.Configure<Config_MailSMPTConfig>(builder.Configuration.GetSection("MailSMPTConfig"));
 builder.Services.AddControllersWithViews();
 builder.Services.AddRazorPages().AddRazorRuntimeCompilation();
 

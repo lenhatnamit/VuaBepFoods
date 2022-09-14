@@ -18,7 +18,7 @@
                 let isvalidate = CheckValidationUnobtrusive($formElm);
                 if (!isvalidate) { ShowToastNoti('warning', '', _resultActionResource.PleaseWrite); return false; }
                 let formData = new FormData($formElm[0]);
-                laddaSubmitForm = Ladda.create(document.querySelector('#btn_submit_form_contact'));
+                var laddaSubmitForm = Ladda.create(document.querySelector('#btn_submit_form_contact'));
                 laddaSubmitForm.start();
                 $.ajax({
                     url: '/Home/SubmitContact',
@@ -30,6 +30,7 @@
                         laddaSubmitForm.stop();
                         if (!CheckResponseIsSuccess(response)) return false;
                         swal.fire('Đã gửi!', '', 'success');
+                        $('#form_data_contact').trigger('reset');
                     }, error: function (err) {
                         laddaSubmitForm.stop();
                         CheckResponseIsSuccess({ result: -1, error: { code: err.status } });
@@ -110,7 +111,7 @@
                             </p>
                             <h2 class="text-uppercase">Đừng lo đã có <i class="fa fa-arrow-circle-right"></i> <i class="fa fa-arrow-circle-right"></i> <i class="fa fa-arrow-circle-right"></i></h2>
                             <!-- Buttons -->
-                            <a href="tel:0794811011" class="slide-button slide-button-active">Liên hệ đặt hàng</a>
+                            <a href="tel:0938034589" class="slide-button slide-button-active">Liên hệ đặt hàng</a>
 
                             <!-- Button -->
                             <a href="#amazing-features" class="slide-button">Tìm hiểu thêm</a>

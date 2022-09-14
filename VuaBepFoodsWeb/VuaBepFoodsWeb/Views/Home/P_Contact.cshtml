@@ -50,21 +50,23 @@
                                 </label>
 
                                 <label>
-                                    <input class="app-btn value-clear" type="tel" asp-for="telephoneNumber" placeholder="Điện thoại" required>
+                                    <input class="app-btn value-clear" type="tel" asp-for="telephoneNumber" placeholder="Điện thoại" required />
                                     <span asp-validation-for="telephoneNumber" class="invalid-feedback"></span>
                                 </label>
 
                                 <label>
-                                    <input class="app-btn value-clear" type="email" asp-for="email" placeholder="Email">
-                                    <span asp-validation-for="email" class="invalid-feedback"></span>
+                                    <input class="app-btn value-clear" type="email" asp-for="email" placeholder="Email" pattern=@(@"^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$") />
+                                    <span asp-validation-for="email" class="invalid-feedback">Email không hợp lệ</span>
                                 </label>
 
                                 <label>
-                                    <input class="app-btn value-clear" type="number" asp-for="quantity" placeholder="Số lượng" min="1" max="@Int32.MaxValue" required>
+                                    <input class="app-btn value-clear" type="number" asp-for="quantity" placeholder="Số lượng đặt hàng (chai)" min="1" max="@Int32.MaxValue" required />
+                                    <span asp-validation-for="quantity" class="invalid-feedback"></span>
                                 </label>
 
                                 <label class="last">
                                     <textarea class="app-btn value-clear" asp-for="message" placeholder="Lời nhắn"></textarea>
+                                    <span asp-validation-for="message" class="invalid-feedback"></span>
                                 </label>
 
                                 <label class="move">

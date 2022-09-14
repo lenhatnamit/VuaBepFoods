@@ -4357,7 +4357,7 @@ box-shadow: 0px 0px 22px -7px rgba(24,30,110,0.26);
   width:30px;
 }
 
-.site-quick-support i.fa, .site-quick-support span {
+.site-quick-support i.fa {
   /* Icons */
   float:left;
   width:38px;
