@@ -50,6 +50,16 @@
     <link href="~/css/site.css" rel="stylesheet" asp-append-version="true" />
 
     @await RenderSectionAsync("Styles", required: false)
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-MJQV6MG6KF"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-MJQV6MG6KF');
+    </script>
 </head>
 <body>
 
